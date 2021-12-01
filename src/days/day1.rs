@@ -15,7 +15,6 @@ pub fn solve() -> (Option<i64>, Option<i64>) {
     let mut res2 = 0;
     let mut last: i32 = contents[0..=2].iter().sum();
     for w in contents[1..].windows(3) {
-        dprint(w);
         let sum = w.iter().sum();
         if sum > last {
             res2 += 1;
