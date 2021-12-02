@@ -1,6 +1,6 @@
 use crate::util::*;
 
-pub fn solve() -> (Option<i64>, Option<i64>) {
+pub fn solve() -> (Option<i32>, Option<i32>) {
     let contents = read_file_to_vec::<i32>("src/days/input/1");
 
     let mut res1 = 0;
@@ -22,5 +22,5 @@ pub fn solve() -> (Option<i64>, Option<i64>) {
         last = sum; 
     }
 
-    (Some(res1 as i64), Some(res2 as i64))
+    (Some(res1), Some(res2))
 }

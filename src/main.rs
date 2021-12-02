@@ -5,7 +5,7 @@ mod days;
 mod util;
 
 fn main() {
-    let solutions = days::day1::solve();
+    let solutions = days::day2::solve();
 
     if let Some(day1_solution) = solutions.0 {
         println!("Part 1: {}", day1_solution);
