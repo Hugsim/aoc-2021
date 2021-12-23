@@ -19,7 +19,7 @@ pub fn solve() -> (Option<i32>, Option<i32>) {
         if sum > last {
             res2 += 1;
         }
-        last = sum; 
+        last = sum;
     }
 
     (Some(res1), Some(res2))

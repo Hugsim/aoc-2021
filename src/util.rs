@@ -5,7 +5,7 @@ pub fn read_file_to_string(file: &str) -> String {
     fs::read_to_string(file).expect(&format!("Couldn't open {}", file)[..])
 }
 
-pub fn read_file_to_string_iter(file: &str) -> impl Iterator {
+pub fn read_file_to_string_iter(file: &str) -> impl Iterator<Item = String> {
     read_file_to_vec::<String>(file).into_iter()
 }
 

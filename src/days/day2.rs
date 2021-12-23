@@ -6,7 +6,7 @@ use std::str::FromStr;
 enum Direction {
     Forward,
     Down,
-    Up
+    Up,
 }
 impl FromStr for Direction {
     type Err = ();
@@ -25,7 +25,7 @@ impl FromStr for Direction {
 }
 
 #[derive(Clone)]
-struct Instruction (Direction, i32);
+struct Instruction(Direction, i32);
 impl FromStr for Instruction {
     type Err = ();
 
@@ -48,10 +48,10 @@ pub fn solve() -> (Option<i32>, Option<i32>) {
         match instr {
             Instruction(Direction::Forward, a) => {
                 distance_forward_1 += a;
-            },
+            }
             Instruction(Direction::Down, a) => {
                 distance_down_1 += a;
-            },
+            }
             Instruction(Direction::Up, a) => {
                 distance_down_1 -= a;
             }
@@ -67,15 +67,18 @@ pub fn solve() -> (Option<i32>, Option<i32>) {
             Instruction(Direction::Forward, a) => {
                 distance_forward_2 += a;
                 distance_down_2 += aim * a;
-            },
+            }
             Instruction(Direction::Down, a) => {
                 aim += a;
-            },
+            }
             Instruction(Direction::Up, a) => {
                 aim -= a;
             }
         }
     }
 
-    (Some(distance_down_1 * distance_forward_1), Some(distance_down_2 * distance_forward_2))
+    (
+        Some(distance_down_1 * distance_forward_1),
+        Some(distance_down_2 * distance_forward_2),
+    )
 }
