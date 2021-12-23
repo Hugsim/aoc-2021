@@ -51,3 +51,7 @@ impl UnsafeParseable for &str {
         self.parse::<T>().expect("Couldn't parse value")
     }
 }
+
+pub fn bin_string_to_i32(s: &String) -> i32 {
+    i32::from_str_radix(&s, 2).expect("Couldn't convert from String to i32")
+}
